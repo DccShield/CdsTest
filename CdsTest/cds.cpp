@@ -1,3 +1,13 @@
+//--------------------------------------------------------------------------------
+// Cdsセンサテストスケッチ
+// [CdsTest.cpp]
+// Copyright (c) 2020 Ayanosuke(Maison de DCC)
+// https://desktopstation.net/bb/index.php
+//
+// This software is released under the MIT License.
+// http://opensource.org/licenses/mit-license.php
+//--------------------------------------------------------------------------------
+
 #include "cds.h"
 #include  <arduino.h>
 
@@ -28,9 +38,9 @@ char Cds::statechk( char range ){
                 return HIGH;
               }
               Ain = analogRead( port );
-// char temp[20];
-// sprintf(temp,"port:%d Ain:%d",port,Ain);
-// Serial.println(temp);
+ char temp[20];
+ sprintf(temp,"port:%d Ain:%d",port,Ain);
+ Serial.println(temp);
               if(range == LOW){
                 if(Ain <=  LThreshold){
                   cnt++;
